@@ -1,16 +1,19 @@
 package maintainabilityindex_test
 
 import (
+	"github.com/gostaticanalysis/testutil"
 	"testing"
 
 	"maintainabilityindex"
 
-	"github.com/gostaticanalysis/testutil"
 	"golang.org/x/tools/go/analysis/analysistest"
 )
 
-// TestAnalyzer is a test for Analyzer.
+func init() {
+	maintainabilityindex.Analyzer.Flags.Set("under", "100")
+}
+
 func TestAnalyzer(t *testing.T) {
 	testdata := testutil.WithModules(t, analysistest.TestData(), nil)
-	analysistest.Run(t, testdata, maintainabilityindex.Analyzer, "a")
+	analysistest.Run(t, testdata, maintainabilityindex.Analyzer, "maintainabilityindex")
 }
