@@ -1,7 +1,6 @@
 package maintidx_test
 
 import (
-	"github.com/gostaticanalysis/testutil"
 	"testing"
 
 	"github.com/yagipy/maintidx"
@@ -14,6 +13,6 @@ func init() {
 }
 
 func TestAnalyzer(t *testing.T) {
-	testdata := testutil.WithModules(t, analysistest.TestData(), nil)
+	testdata := analysistest.TestData()
 	analysistest.Run(t, testdata, maintidx.Analyzer, "maintidx")
 }
