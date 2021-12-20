@@ -1,4 +1,4 @@
-package maintidx
+package maintainabilityindex
 
 import (
 	"go/ast"
@@ -20,8 +20,8 @@ type Coef struct {
 	HalstVol halstvol.HalstVol
 }
 
-func Analyze(n ast.Node) Visitor {
-	v := Visitor{
+func NewVisitor() *Visitor {
+	return &Visitor{
 		MaintIdx: 0,
 		Coef: Coef{
 			Cyc: cyc.Cyc{
@@ -37,8 +37,6 @@ func Analyze(n ast.Node) Visitor {
 			},
 		},
 	}
-	ast.Walk(&v, n)
-	return v
 }
 
 func (v *Visitor) Visit(n ast.Node) ast.Visitor {
@@ -48,14 +46,14 @@ func (v *Visitor) Visit(n ast.Node) ast.Visitor {
 }
 
 // Calc https://docs.microsoft.com/ja-jp/archive/blogs/codeanalysis/maintainability-index-range-and-meaning
-func (v *Visitor) Calc(loc int) {
+func (v *Visitor) calc(loc int) {
 	origVal := 171.0 - 5.2*math.Log(v.Coef.HalstVol.Val) - 0.23*float64(v.Coef.Cyc.Val) - 16.2*math.Log(float64(loc))
 	normVal := int(math.Max(0.0, origVal*100.0/171.0))
 	v.MaintIdx = normVal
 }
 
 // TODO: Move halstvol package
-func (v *Visitor) PrintHalstVol() {
+func (v *Visitor) printHalstVol() {
 	sortedOpt := make([]string, len(v.Coef.HalstVol.Coef.Opt))
 	sortedOpd := make([]string, len(v.Coef.HalstVol.Coef.Opd))
 	optIndex := 0
@@ -77,3 +75,4 @@ func (v *Visitor) PrintHalstVol() {
 		println("operands", val, v.Coef.HalstVol.Coef.Opd[val])
 	}
 }
+

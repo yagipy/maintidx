@@ -1,1 +1,0 @@
-package maintidx_test

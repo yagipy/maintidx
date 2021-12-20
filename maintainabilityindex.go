@@ -6,7 +6,6 @@ import (
 	"golang.org/x/tools/go/analysis"
 	"golang.org/x/tools/go/analysis/passes/inspect"
 	"golang.org/x/tools/go/ast/inspector"
-	"maintainabilityindex/pkg/maintidx"
 )
 
 const doc = "maintainabilityindex measures the maintainability index of each function."
@@ -36,11 +35,11 @@ func run(pass *analysis.Pass) (interface{}, error) {
 	i.Preorder(nodeFilter, func(n ast.Node) {
 		switch n := n.(type) {
 		case *ast.FuncDecl:
-			v := maintidx.Analyze(n)
+			v := analyze(n)
 
 			v.Coef.Cyc.Calc()
 			v.Coef.HalstVol.Calc()
-			v.Calc(loc(pass.Fset, n))
+			v.calc(loc(pass.Fset, n))
 			if v.MaintIdx < under {
 				pass.Reportf(n.Pos(), "Function name: %v, Cyclomatic Complexity: %v, Halstead Volume: %0.2f, Maintainability Index: %v", n.Name, v.Coef.Cyc.Val, v.Coef.HalstVol.Val, v.MaintIdx)
 			}
@@ -48,6 +47,12 @@ func run(pass *analysis.Pass) (interface{}, error) {
 	})
 
 	return nil, nil
+}
+
+func analyze(n ast.Node) Visitor {
+	v := NewVisitor()
+	ast.Walk(v, n)
+	return *v
 }
 
 func loc(fs *token.FileSet, n *ast.FuncDecl) int {
