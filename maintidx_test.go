@@ -4,7 +4,7 @@ import (
 	"github.com/gostaticanalysis/testutil"
 	"testing"
 
-	"maintidx"
+	"github.com/yagipy/maintidx"
 
 	"golang.org/x/tools/go/analysis/analysistest"
 )

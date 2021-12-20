@@ -1,8 +1,8 @@
 package main
 
 import (
+	"github.com/yagipy/maintidx"
 	"golang.org/x/tools/go/analysis/singlechecker"
-	"maintidx"
 )
 
 func main() { singlechecker.Main(maintidx.Analyzer) }

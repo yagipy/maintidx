@@ -1,9 +1,9 @@
 package maintidx
 
 import (
+	"github.com/yagipy/maintidx/pkg/cyc"
+	"github.com/yagipy/maintidx/pkg/halstvol"
 	"go/ast"
-	"maintidx/pkg/cyc"
-	"maintidx/pkg/halstvol"
 	"math"
 	"sort"
 )

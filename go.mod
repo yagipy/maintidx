@@ -1,4 +1,4 @@
-module maintidx
+module github.com/yagipy/maintidx
 
 go 1.17
 
