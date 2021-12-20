@@ -1,9 +1,9 @@
-package maintainabilityindex
+package maintidx
 
 import (
 	"go/ast"
-	"maintainabilityindex/pkg/cyc"
-	"maintainabilityindex/pkg/halstvol"
+	"maintidx/pkg/cyc"
+	"maintidx/pkg/halstvol"
 	"math"
 	"sort"
 )

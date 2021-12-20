@@ -1,2 +1,2 @@
 build:
-	go build -o bin/maintainabilityindex ./cmd/maintainabilityindex
+	go build -o bin/maintidx ./cmd/maintidx

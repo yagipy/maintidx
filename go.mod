@@ -1,4 +1,4 @@
-module maintainabilityindex
+module maintidx
 
 go 1.17
 

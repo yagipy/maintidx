@@ -1,19 +1,19 @@
-package maintainabilityindex_test
+package maintidx_test
 
 import (
 	"github.com/gostaticanalysis/testutil"
 	"testing"
 
-	"maintainabilityindex"
+	"maintidx"
 
 	"golang.org/x/tools/go/analysis/analysistest"
 )
 
 func init() {
-	maintainabilityindex.Analyzer.Flags.Set("under", "100")
+	maintidx.Analyzer.Flags.Set("under", "100")
 }
 
 func TestAnalyzer(t *testing.T) {
 	testdata := testutil.WithModules(t, analysistest.TestData(), nil)
-	analysistest.Run(t, testdata, maintainabilityindex.Analyzer, "maintainabilityindex")
+	analysistest.Run(t, testdata, maintidx.Analyzer, "maintidx")
 }

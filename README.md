@@ -1,5 +1,5 @@
-# maintainabilityindex
-maintainabilityindex measures the maintainability index of each function.
+# maintidx
+maintidx measures the maintainability index of each function.
 
 ## Generate exec file
 ```shell

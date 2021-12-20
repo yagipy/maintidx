@@ -1,4 +1,4 @@
-package maintainabilityindex
+package maintidx
 
 import "fmt"
 

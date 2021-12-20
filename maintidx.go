@@ -1,4 +1,4 @@
-package maintainabilityindex
+package maintidx
 
 import (
 	"go/ast"
@@ -8,10 +8,10 @@ import (
 	"golang.org/x/tools/go/ast/inspector"
 )
 
-const doc = "maintainabilityindex measures the maintainability index of each function."
+const doc = "maintidx measures the maintainability index of each function."
 
 var Analyzer = &analysis.Analyzer{
-	Name: "maintainabilityindex",
+	Name: "maintidx",
 	Doc:  doc,
 	Run:  run,
 	Requires: []*analysis.Analyzer{
@@ -22,7 +22,7 @@ var Analyzer = &analysis.Analyzer{
 var under int
 
 func init() {
-	Analyzer.Flags.IntVar(&under, "under", 20, "show functions with maintainability < N only.")
+	Analyzer.Flags.IntVar(&under, "under", 20, "show functions with maintainability index < N only.")
 }
 
 func run(pass *analysis.Pass) (interface{}, error) {
