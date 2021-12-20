@@ -1,14 +1,40 @@
 # maintidx
-maintidx measures the maintainability index of each function.
+`maintidx` measures the maintainability index of each function.  
+https://docs.microsoft.com/en-us/visualstudio/code-quality/code-metrics-maintainability-index-range-and-meaning
 
-## Generate exec file
+## Installation
+### Go version < 1.16
 ```shell
-make build
+go get -u github.com/yagipy/maintidx/cmd/maintidx
 ```
 
-## Run test
+### Go version 1.16+
 ```shell
-go test ./...
+go install github.com/yagipy/maintidx/cmd/maintidx
+```
+
+## Usage
+### standalone
+```shell
+maintidx ./...
+```
+
+### with go run
+No installation required
+```shell
+go run github.com/yagipy/maintidx/cmd/maintidx ./...
+```
+
+### with go vet
+```shell
+go vet -vettool=`which maintidx` ./...
+```
+
+## Flag
+```shell
+Flags:
+  -under int
+    	show functions with maintainability index < N only. (default 20)
 ```
 
 ## TODO
