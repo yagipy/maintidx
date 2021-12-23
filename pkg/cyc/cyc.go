@@ -6,11 +6,11 @@ import (
 )
 
 type Cyc struct {
-	Val int
+	Val  int
 	Coef Coef
 }
 
-type Coef struct {}
+type Coef struct{}
 
 func (c *Cyc) Analyze(n ast.Node) {
 	switch n := n.(type) {

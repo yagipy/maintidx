@@ -6,7 +6,7 @@ import (
 )
 
 type HalstVol struct {
-	Val float64
+	Val  float64
 	Coef Coef
 }
 
@@ -54,10 +54,10 @@ func (v *HalstVol) Calc() {
 		sumOpd += val
 	}
 
-	nVocab := distOpt + distOpd
+	vocab := distOpt + distOpd
 	length := sumOpt + sumOpd
 
-	v.Val = float64(length) * math.Log2(float64(nVocab))
+	v.Val = float64(length) * math.Log2(float64(vocab))
 }
 
 // TODO: Consider the necessity

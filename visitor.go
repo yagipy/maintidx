@@ -10,13 +10,13 @@ import (
 
 type Visitor struct {
 	MaintIdx int
-	Coef Coef
+	Coef     Coef
 }
 
 var _ ast.Visitor = &Visitor{}
 
 type Coef struct {
-	Cyc cyc.Cyc
+	Cyc      cyc.Cyc
 	HalstVol halstvol.HalstVol
 }
 
@@ -25,7 +25,7 @@ func NewVisitor() *Visitor {
 		MaintIdx: 0,
 		Coef: Coef{
 			Cyc: cyc.Cyc{
-				Val: 1,
+				Val:  1,
 				Coef: cyc.Coef{},
 			},
 			HalstVol: halstvol.HalstVol{
@@ -75,4 +75,3 @@ func (v *Visitor) printHalstVol() {
 		println("operands", val, v.Coef.HalstVol.Coef.Opd[val])
 	}
 }
-
