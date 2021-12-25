@@ -25,22 +25,17 @@ func f3() { // want "Function name: f3, Cyclomatic Complexity: 1, Halstead Volum
 	println(avg)
 }
 
-func f4() { // want "Function name: f4, Cyclomatic Complexity: 2, Halstead Volume: 25.27, Maintainability Index: 71"
+func f4() { // want "Function name: f4, Cyclomatic Complexity: 2, Halstead Volume: 25.27, Maintainability Index: 74"
 	if false {
-
 	} else {
-
 	}
 }
 
-func f5() { // want "Function name: f5, Cyclomatic Complexity: 8, Halstead Volume: 144.00, Maintainability Index: 55"
+func f5() { // want "Function name: f5, Cyclomatic Complexity: 8, Halstead Volume: 144.00, Maintainability Index: 57"
 	for true {
 		if false {
-
 		} else if false {
-
 		} else if false {
-
 		} else if false {
 			n := 0
 			switch n {
@@ -49,7 +44,6 @@ func f5() { // want "Function name: f5, Cyclomatic Complexity: 8, Halstead Volum
 			default:
 			}
 		} else {
-
 		}
 	}
 }
@@ -116,5 +110,196 @@ func f14() { // want "Function name: f14, Cyclomatic Complexity: 2, Halstead Vol
 	a := []int{0, 1, 2}
 	for b := range a {
 		fmt.Println(b)
+	}
+}
+
+func under20() { // want "Function name: under20, Cyclomatic Complexity: 76, Halstead Volume: 1636.00, Maintainability Index: 17"
+	for true {
+		if false {
+			if false {
+				n := 0
+				switch n {
+				case 0:
+				case 1:
+				default:
+				}
+			} else if false {
+				n := 0
+				switch n {
+				case 0:
+				case 1:
+				default:
+				}
+			} else if false {
+				n := 0
+				switch n {
+				case 0:
+				case 1:
+				default:
+				}
+			} else if false {
+				n := 0
+				switch n {
+				case 0:
+				case 1:
+				default:
+				}
+			} else {
+				n := 0
+				switch n {
+				case 0:
+				case 1:
+				default:
+				}
+			}
+		} else if false {
+			if false {
+				n := 0
+				switch n {
+				case 0:
+				case 1:
+				default:
+				}
+			} else if false {
+				n := 0
+				switch n {
+				case 0:
+				case 1:
+				default:
+				}
+			} else if false {
+				n := 0
+				switch n {
+				case 0:
+				case 1:
+				default:
+				}
+			} else if false {
+				n := 0
+				switch n {
+				case 0:
+				case 1:
+				default:
+				}
+			} else {
+				n := 0
+				switch n {
+				case 0:
+				case 1:
+				default:
+				}
+			}
+		} else if false {
+			if false {
+				n := 0
+				switch n {
+				case 0:
+				case 1:
+				default:
+				}
+			} else if false {
+				n := 0
+				switch n {
+				case 0:
+				case 1:
+				default:
+				}
+			} else if false {
+				n := 0
+				switch n {
+				case 0:
+				case 1:
+				default:
+				}
+			} else if false {
+				n := 0
+				switch n {
+				case 0:
+				case 1:
+				default:
+				}
+			} else {
+				n := 0
+				switch n {
+				case 0:
+				case 1:
+				default:
+				}
+			}
+		} else if false {
+			if false {
+				n := 0
+				switch n {
+				case 0:
+				case 1:
+				default:
+				}
+			} else if false {
+				n := 0
+				switch n {
+				case 0:
+				case 1:
+				default:
+				}
+			} else if false {
+				n := 0
+				switch n {
+				case 0:
+				case 1:
+				default:
+				}
+			} else if false {
+				n := 0
+				switch n {
+				case 0:
+				case 1:
+				default:
+				}
+			} else {
+				n := 0
+				switch n {
+				case 0:
+				case 1:
+				default:
+				}
+			}
+		} else {
+			if false {
+				n := 0
+				switch n {
+				case 0:
+				case 1:
+				default:
+				}
+			} else if false {
+				n := 0
+				switch n {
+				case 0:
+				case 1:
+				default:
+				}
+			} else if false {
+				n := 0
+				switch n {
+				case 0:
+				case 1:
+				default:
+				}
+			} else if false {
+				n := 0
+				switch n {
+				case 0:
+				case 1:
+				default:
+				}
+			} else {
+				n := 0
+				switch n {
+				case 0:
+				case 1:
+				default:
+				}
+			}
+		}
 	}
 }
