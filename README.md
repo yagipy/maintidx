@@ -1,16 +1,22 @@
 # maintidx
 `maintidx` measures the maintainability index of each function.  
-https://docs.microsoft.com/en-us/visualstudio/code-quality/code-metrics-maintainability-index-range-and-meaning
+[Here](https://blog.yagipy.me/analyze-maintainability-index) for more information about this library.(Sorry, Japanese only)
+
+## What is maintainability index
+The maintainability index is an index that measures the maintainability of source code.  
+The coefficients include cyclomatic complexity, halstead volume, and line of code.  
+This library used [the rebased value provided by Microsoft.](https://docs.microsoft.com/en-us/visualstudio/code-quality/code-metrics-maintainability-index-range-and-meaning)  
+The maintainability index is an experimental value, so don't expect too much from it, but [the cyclomatic complexity used as a coefficient was found to be closely related to the number of times the code was edited.](https://ieeexplore.ieee.org/document/312034)
 
 ## Installation
 ### Go version < 1.16
 ```shell
-go get -u github.com/yagipy/maintidx/cmd/maintidx
+go get -u github.com/yagipy/maintidx/cmd/maintidx@v1.0.0
 ```
 
 ### Go version 1.16+
 ```shell
-go install github.com/yagipy/maintidx/cmd/maintidx
+go install github.com/yagipy/maintidx/cmd/maintidx@v1.0.0
 ```
 
 ## Usage
