@@ -1,6 +1,6 @@
 # maintidx
 `maintidx` measures the maintainability index of each function.  
-[Here](https://blog.yagipy.me/analyze-maintainability-index) for more information about this library.(Sorry, Japanese only)
+[Here](https://blog.yagipy.me/analyze-maintainability-index) for more information about this package.(Sorry, japanese only)
 
 ## What is maintainability index
 The maintainability index is an index that measures the maintainability of source code.  
@@ -25,8 +25,34 @@ go install github.com/yagipy/maintidx/cmd/maintidx@v1.0.0
 maintidx ./...
 ```
 
+### with [golangci-lint](https://github.com/golangci/golangci-lint)
+1. [Install golangci-lint](https://golangci-lint.run/usage/install/)
+2. Execute the following
+```shell
+golangci-lint run --disable-all -E maintidx
+```
+
+It's also available to use .golangci.yml
+```yaml
+# Add maintidx to enable linters.
+linters:
+  enable:
+    - maintidx
+
+linters-settings:
+  maintidx:
+    # Show functions with maintainability index lower than N.
+    # A high index indicates better maintainability (it's kind of the opposite of complexity).
+    # Default: 20
+    under: 100
+```
+
+Execute using .golangci.yml
+```shell
+golangci-lint run
+```
+
 ### with go run
-No installation required
 ```shell
 go run github.com/yagipy/maintidx/cmd/maintidx ./...
 ```
