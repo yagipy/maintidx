@@ -68,10 +68,3 @@ Flags:
   -under int
     	show functions with maintainability index < N only. (default 20)
 ```
-
-## TODO
-- [ ] Setup execute env on container
-- [ ] Impl cyc.Cyc.Calc()
-- [ ] Move maintidx.Visitor.PrintHalstVol to halstval package
-- [ ] Consider the necessity of halstvol.incrIfAllTrue
-- [ ] Test under pkg file
