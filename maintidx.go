@@ -8,7 +8,7 @@ import (
 	"golang.org/x/tools/go/ast/inspector"
 )
 
-const doc = "maintidx measures the maintainability index of each function."
+const doc = "Measures the maintainability index of each function."
 
 var Analyzer = &analysis.Analyzer{
 	Name: "maintidx",
