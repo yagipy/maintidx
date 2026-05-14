@@ -29,7 +29,7 @@ maintidx ./...
 1. [Install golangci-lint](https://golangci-lint.run/usage/install/)
 2. Execute the following
 ```shell
-golangci-lint run --disable-all -E maintidx
+golangci-lint run --enable-only maintidx
 ```
 
 It's also available to use .golangci.yml
